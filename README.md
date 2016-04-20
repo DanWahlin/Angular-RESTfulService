@@ -30,6 +30,6 @@ Load data into MongoDB by performing the following steps:
 
 1. Run `npm install` to install app dependencies
 
-1. Run `npm start` in a separate terminal window to compile the TypeScript and start the server
+1. Run `npm start` to compile the TypeScript and start the server
 
 1. Browse to http://localhost:3000
