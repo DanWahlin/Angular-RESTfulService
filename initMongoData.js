@@ -1,4 +1,17 @@
-var db = db.getSiblingDB('customermanager');
+// Module dependencies
+var mongoose = require('mongoose'),
+   Schema = mongoose.Schema,
+   Customer = require('./models/customer'),
+   State = require('./models/state'),
+   Settings = require('./models/settings'),
+   util = require('util'),
+   connection = 'mongodb://localhost/customermanager';
+
+mongoose.connect(connection);
+// Check connection to mongoDB
+mongoose.connection.on('open', function () {
+    console.log('We have connected to mongodb');
+});
 
 //Customers
 var customerNames =
@@ -25,7 +38,8 @@ var customerNames =
     "Robyn,Flores,Female,yahoo.com",
     "Jeff,Wahlin,Male,gmail.com",
     "Danny,Wahlin,Male,gmail.com",
-    "Elaine,Jones,Female,yahoo.com"
+    "Elaine,Jones,Female,yahoo.com",
+    "John,Papa,Male,gmail.com"
 ];
 var addresses =
 [
@@ -52,6 +66,7 @@ var addresses =
     "346346 Blue Pl.",
     "23423 Adams St.",
     "633 Main St.",
+    "899 Mickey Way"
 ];
 
 var citiesStates =
@@ -78,10 +93,11 @@ var citiesStates =
     "Buffalo,NY,New York",
     "Albuquerque,AZ,Arizona",
     "Boise,ID,Idaho",
-    "Salt Lake City,UT,Utah"
+    "Salt Lake City,UT,Utah",
+    "Orlando,FL,Florida"
 ];
 
-var citiesIds = [5, 9, 44, 5, 36, 17, 16, 9, 36, 14, 14, 6, 9, 24, 44, 36, 25, 19, 5, 14, 5, 23, 38];
+var citiesIds = [5, 9, 44, 5, 36, 17, 16, 9, 36, 14, 14, 6, 9, 24, 44, 36, 25, 19, 5, 14, 5, 23, 38, 17];
 
 
 var zip = 85229;
@@ -104,8 +120,7 @@ var orders =
   { "product": "Bat", "price": 19.99, "quantity": 1 }
 ];
 
-db.customers.remove({});
-
+Customer.remove({});
 
 var l = customerNames.length,
     i,
@@ -119,7 +134,7 @@ for (i = 0; i < l; i++) {
     var nameGenderHost = customerNames[i].split(',');
     var cityState = citiesStates[i].split(',');
     var s = { 'id': citiesIds[i], 'abbreviation': cityState[1], 'name': cityState[2] }
-    var c = {
+    var c = new Customer({
         'firstName': nameGenderHost[0]
         , 'lastName': nameGenderHost[1]
         , 'email': nameGenderHost[0] + '.' + nameGenderHost[1] + '@' + nameGenderHost[3]
@@ -131,7 +146,7 @@ for (i = 0; i < l; i++) {
         , 'gender': nameGenderHost[2]
         , 'id': i + 1
         , 'orderCount': 0
-    };
+    });
     firstOrder = Math.floor(Math.random() * orders.length);
     lastOrder = Math.floor(Math.random() * orders.length);
     if (firstOrder > lastOrder) {
@@ -141,7 +156,7 @@ for (i = 0; i < l; i++) {
     }
 
     c.orders = [];
-    print('firstOrder: ' + firstOrder + ", lastOrder: " + lastOrder);
+    console.log('firstOrder: ' + firstOrder + ", lastOrder: " + lastOrder);
     for (j = firstOrder; j <= lastOrder && j < n; j++) {
         var today = new Date();
         var tomorrow = new Date();
@@ -157,14 +172,20 @@ for (i = 0; i < l; i++) {
     }
     c.orderCount = c.orders.length;
 
-    db.customers.insert(c);
+    c.save(function (err) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('inserted');
+        }
+    });
 }
 
 
 //Settings
-db.settings.remove({});
-var r = { 'nextSeqNumber': 24, 'collectionName': "customers" };
-db.settings.insert(r);
+Settings.remove({});
+var settings = new Settings ({ 'nextSeqNumber': customerNames.length, 'collectionName': "customers" });
+settings.save();
 
 //States
 var states = [
@@ -223,11 +244,11 @@ var states = [
 var l = states.length,
     i;
 
-db.states.remove({});
+State.remove({});
 
 for (i = 0; i < l; i++) {
-    var r = { 'id': i + 1, 'name': states[i].name, 'abbreviation': states[i].abbreviation };
-    db.states.insert(r);
+    var state = new State ({ 'id': i + 1, 'name': states[i].name, 'abbreviation': states[i].abbreviation });
+    state.save();
 }
 
 

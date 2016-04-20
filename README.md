@@ -21,13 +21,10 @@ to call into a RESTful service. Simply clone the project or download and extract
 
 Load data into MongoDB by performing the following steps:
 
-* Install MongoDB (https://docs.mongodb.org/manual/installation)
+* Install MongoDB (https://docs.mongodb.org/manual/installation) on your machine
 * Execute 'mongod' to start the MongoDB daemon if it's not already running
 * Open a command window and navigate to the `angular2-restfulservice` directory 
-* Execute 'mongo' to start the MongoDB shell
-* Enter the following in the mongo shell to load the data seed file:
- * use customermanager
- * load("initMongoData.js")
+* Run `node initMongoData.js` to insert the sample data
 
 ## Running the Application
 

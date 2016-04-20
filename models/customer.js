@@ -1,16 +1,8 @@
-var mongoose = require('mongoose')
-  , Schema = mongoose.Schema
-  , ObjectId = Schema.ObjectId;
+var mongoose = require('mongoose'),
+    Schema = mongoose.Schema,
+    ObjectId = Schema.ObjectId,
+    Settings = require('./settings');
 
-
-var SettingsSchema = new Schema({
-  collectionName : {
-    type : String, required: true, trim: true, default: 'customers'
-  },
-  nextSeqNumber: {
-    type: Number, default: 1
-  }
-});
 
 var OrderSchema = new Schema({
   product : {
@@ -71,8 +63,6 @@ var CustomerSchema = new Schema({
 
 CustomerSchema.index({ id: 1, type: 1 }); // schema level
 
-// I make sure this is the last pre-save middleware (just in case)
-var Settings = mongoose.model('settings', SettingsSchema);
 
 CustomerSchema.pre('save', function(next) {
   var doc = this;
