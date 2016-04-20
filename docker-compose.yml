@@ -1,17 +1,24 @@
+# 1. Run export APP_ENV=<environment> (development or production)
+# 2. Run docker-compose build
+# 3. Run docker-compose up
+# 4. Live long and prosper
+
 version: '2'
 
 services:
 
   node:
+    container_name: nodeapp
     build:
-      context: .
-      dockerfile: node.dockerfile
+      context: ./.docker
+      dockerfile: node.${APP_ENV}.dockerfile
     ports:
       - "3000:3000"
     networks:
       - nodeapp-network
       
   mongodb:
+    container_name: mongo
     image: mongo
     networks:
       - nodeapp-network

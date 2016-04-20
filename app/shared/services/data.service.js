@@ -29,12 +29,21 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map', 'rxj
             DataService = (function () {
                 function DataService(_http) {
                     this._http = _http;
-                    this._url = 'api/dataservice/customersSummary';
+                    this._url = 'api/dataservice/';
                 }
                 DataService.prototype.getCustomersSummary = function () {
-                    return this._http.get(this._url)
+                    return this._http.get(this._url + 'customers')
                         .map(function (resp) { return resp.json(); })
                         .catch(this.handleError);
+                };
+                DataService.prototype.updateCustomer = function (customer) {
+                    //Set proper info for header
+                    var headers = new http_1.Headers({ 'content-type': 'application/json' });
+                    var options = new http_1.RequestOptions({ headers: headers });
+                    return this._http.put(this._url + 'putCustomer/' + customer.id, JSON.stringify(customer), options)
+                        .map(function (response) {
+                        return response.json();
+                    });
                 };
                 DataService.prototype.handleError = function (error) {
                     console.error(error);

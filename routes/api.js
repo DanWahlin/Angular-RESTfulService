@@ -1,4 +1,4 @@
-var db = require('../accessDB')
+var db = require('../lib/accessDB')
   , util = require('util');
 
 // GET

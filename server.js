@@ -6,16 +6,15 @@ var express = require('express'),
     csrf = require('csurf'),
     routes = require('./routes'),
     api = require('./routes/api'),
-    DB = require('./accessDB'),
-    protectJSON = require('./lib/protectJSON'),
+    DB = require('./lib/accessDB'),
     app = express();
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-// app.use(session({ 
-//     secret: 'customermanagerstandard', 
-//     saveUninitialized: true,
-//     resave: true }));
+app.use(session({ 
+    secret: 'customermanagerdemo', 
+    saveUninitialized: true,
+    resave: true }));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -34,9 +33,7 @@ process.on('uncaughtException', function (err) {
     if (err) console.log(err, err.stack);
 });
 
-//Local Connection 
-var conn = 'mongodb://localhost/customermanager';
-var db = new DB.startup(conn);
+DB.startup();
 
 // Routes
 app.get('/', routes.index);
@@ -69,3 +66,19 @@ app.get('*', routes.index);
 app.listen(3000, function () {
     console.log("CustMgr Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
+
+if (process.platform === "win32") {
+    require("readline").createInterface({
+        input: process.stdin,
+        output: process.stdout
+    }).on("SIGINT", function () {
+        console.log('SIGINT: Closing MongoDB connection');
+        DB.close();
+    });
+}
+
+process.on('SIGINT', function() {
+    console.log('SIGINT: Closing MongoDB connection');
+    DB.close();
+});
+

@@ -1,7 +1,48 @@
 <h1>Customers</h1>
+<br />
 
-<ul>
+<!-- Added navbar to switch between list view shown in video and new edit view -->
+<div class="navbar">
+    <ul class="nav navbar-nav">
+        <li class="toolbar-item">
+            <a (click)="editViewEnabled=false" [class.active]="!editViewEnabled">
+                <span class="glyphicon glyphicon-align-justify"></span> List View
+            </a>
+        </li>
+        <li class="toolbar-item">
+            <a (click)="editViewEnabled=true" [class.active]="editViewEnabled">
+                <span class="glyphicon glyphicon-pencil"></span> Edit View
+            </a>
+        </li>
+    </ul>
+</div>
+
+<ul [hidden]="editViewEnabled">
     <li *ngFor="#customer of customers">
         {{ customer.firstName  }} {{ customer.lastName }}
     </li>
 </ul>
+
+<!-- Added editable list to demonstrate doing an HTTP PUT -->
+<div [hidden]="!editViewEnabled">
+    <div class="container" *ngFor="#customer of customers">
+        <div class="row" [hidden]="editId===customer.id">
+            <div class="col-md-4">
+            {{ customer.firstName  }} {{ customer.lastName }}
+            </div>
+            <div class="col-md-8">
+                <span class="btn btn-success pull-left" 
+                    (click)="editId=customer.id">Edit</span>
+            </div>
+        </div>
+        <div [hidden]="editId!==customer.id">
+            First: <input [(ngModel)]="customer.firstName" />&nbsp;
+            Last: <input [(ngModel)]="customer.lastName" />
+            <span class="btn btn-success" (click)="save(customer)">Save</span>&nbsp;
+            <span class="btn btn-default" (click)="editId=0">Cancel</span>
+        </div>
+        <br />
+    </div>
+
+    <span class="alert alert-danger" [hidden]="!errorMessage">{{ errorMessage }}</span>
+</div>

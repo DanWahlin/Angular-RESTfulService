@@ -25,11 +25,22 @@ System.register(['angular2/core', '../shared/services/data.service'], function(e
                 function CustomersComponent(_dataService) {
                     this._dataService = _dataService;
                     this.customers = [];
+                    this.editId = 0;
                 }
                 CustomersComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     this._dataService.getCustomersSummary()
                         .subscribe(function (data) { return _this.customers = data; });
+                };
+                CustomersComponent.prototype.save = function (customer) {
+                    var _this = this;
+                    this._dataService.updateCustomer(customer)
+                        .subscribe(function (status) {
+                        if (status)
+                            _this.editId = 0;
+                        else
+                            _this.errorMessage = 'Unable to save customer';
+                    });
                 };
                 CustomersComponent = __decorate([
                     core_1.Component({
