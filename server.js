@@ -7,6 +7,7 @@ var express = require('express'),
     routes = require('./routes'),
     api = require('./routes/api'),
     DB = require('./lib/accessDB'),
+    seeder = require('./lib/dbSeeder'),
     app = express();
 
 app.set('views', __dirname + '/views');
@@ -33,7 +34,13 @@ process.on('uncaughtException', function (err) {
     if (err) console.log(err, err.stack);
 });
 
-DB.startup();
+
+DB.startup(function() {
+    if (process.env.NODE_ENV === 'development') {
+        console.log('Starting dbSeeder...');
+        seeder.init();
+    } 
+});
 
 // Routes
 app.get('/', routes.index);

@@ -1,23 +1,24 @@
-# Angular 2 RESTful Service
+# Angular 2 RESTful Service Example
 
 This project provides a simple look at getting started using Angular 2 
 to call into a RESTful service. Simply clone the project or download and extract the .zip to get started. 
 
 ## Angular 2 Concepts Covered
 
-* TypeScript version that relies on classes and modules
+* Using TypeScript classes and modules
 * Modules are loaded with System.js
 * Using Custom Components
 * Using the Http object for Ajax calls along with RxJS observables
-* Working Service classes (such as for Ajax calls)
+* Performing GET and PUT requests to the server
+* Working with Angular 2 service classes for Ajax calls
 * Using Angular 2 databinding and built-in directives
 
-## Software Requiremenets
+## Software Requirements To Run Locally (there's a Docker option below as well)
 
 * Node.js 4.0.0 or higher
 * MongoDB 3.2 or higher
 
-## Loading MongoDB Data
+### Loading MongoDB Data
 
 Load data into MongoDB by performing the following steps:
 
@@ -26,10 +27,26 @@ Load data into MongoDB by performing the following steps:
 * Open a command window and navigate to the `angular2-restfulservice` directory 
 * Run `node lib/dbSeeder.js` to insert the sample data (exit with ctrl + c)
 
-## Running the Application
+### Running the Application Locally
 
 1. Run `npm install` to install app dependencies
 
 1. Run `npm start` to compile the TypeScript and start the server
 
 1. Browse to http://localhost:3000
+
+## Running the Application with Docker
+
+1. Install Docker Toolbox (http://docker.com/toolbox)
+
+1. Start the Docker QuickStart Terminal
+
+1. Navigate to this application's root folder in the terminal window
+
+1. Run `docker-compose build` to build the images
+
+1. Run `docker-compose up` to run the containers
+
+1. Navigate to http://192.168.99.100:3000 in a browser
+
+1. Live long and prosper

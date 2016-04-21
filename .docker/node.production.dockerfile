@@ -1,10 +1,25 @@
+FROM node:latest
+
+MAINTAINER Dan Wahlin
+
+ENV CONTAINER_PATH /var/www/angular2restfulservice 
+
+COPY      . $CONTAINER_PATH
+WORKDIR   $CONTAINER_PATH
+
+RUN npm install supervisor -g
+
+EXPOSE 3000
+
+ENTRYPOINT ["supervisor", "server.js"]
+
 # Build: docker build -f node.dockerfile -t danwahlin/node .
 
 # Option 1
 # Start MongoDB and Node (link Node to MongoDB container with legacy linking)
  
 # docker run -d --name mongodb mongo
-# docker run -d -p 3000:3000 --link mongodb:mongodb --name nodeapp danwahlin/node
+# docker run -d -p 3000:3000 --link mongodb --name nodeapp danwahlin/node
 
 # Option 2: Create a custom bridge network and add containers into it
 
@@ -18,20 +33,4 @@
 # docker-compose up
 
 # Seed the database with sample database
-# Run: docker exec nodeapp node dbSeeder.js
-
-FROM node:latest
-
-MAINTAINER Dan Wahlin
-
-ENV NODE_ENV=development 
-ENV PORT=3000
-
-COPY      . /var/www
-WORKDIR   /var/www
-
-RUN       npm install
-
-EXPOSE $PORT
-
-ENTRYPOINT ["npm", "start"]
+# Run: docker exec nodeapp node lib/dbSeeder.js
