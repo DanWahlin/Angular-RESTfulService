@@ -1,5 +1,5 @@
-# Run docker-compose build
-# Run docker-compose up
+# Run docker-compose -f docker-compose.production.yml build
+# Run docker-compose -f docker-compose.production.yml up
 # Live long and prosper
 
 version: '2'

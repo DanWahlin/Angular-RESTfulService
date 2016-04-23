@@ -31,6 +31,8 @@ Load data into MongoDB by performing the following steps:
 
 1. Open `config/config.development.json` and change the host from `mongodb` to `localhost`
 
+1. Install supervisor: `npm install supervisor -g`
+
 1. Run `npm install` to install app dependencies
 
 1. Run `npm start` to compile the TypeScript and start the server
@@ -38,6 +40,8 @@ Load data into MongoDB by performing the following steps:
 1. Browse to http://localhost:3000
 
 ## Running the Application with Docker
+
+1. Run `npm run tsc:w` in a command window to compile TypeScript to JavaScript locally (leave the window running). This is only needed when in "dev" mode.
 
 1. Install Docker Toolbox (http://docker.com/toolbox)
 
@@ -52,3 +56,6 @@ Load data into MongoDB by performing the following steps:
 1. Navigate to http://192.168.99.100:3000 in a browser
 
 1. Live long and prosper
+
+Note: To run the "production" build follow the instructions in docker-compose.production.yml. The local files are compied into
+the image with this mode so no need to have the tsc:w task running unless you're going to continue local development.

@@ -1,5 +1,5 @@
-# Run docker-compose -f docker-compose.[development | production].yml build
-# Run docker-compose -f docker-compose.[development | production].yml up
+# Run docker-compose build
+# Run docker-compose up
 # Live long and prosper
 
 version: '2'

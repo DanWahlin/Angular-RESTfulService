@@ -8,7 +8,7 @@
     "tsc:w": "tsc --watch",
     "live": "live-server --open=src",
     "server": "node server.js",
-    "start": "concurrently \"npm run tsc:w\" \"npm run server\"",
+    "start": "concurrently \"npm run tsc:w\" \"supervisor -i app server.js\"",
     "typings": "typings"
   },
   "dependencies": {
