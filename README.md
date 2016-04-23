@@ -29,6 +29,8 @@ Load data into MongoDB by performing the following steps:
 
 ### Running the Application Locally
 
+1. Open `config/config.development.json` and change the host from `mongodb` to `localhost`
+
 1. Run `npm install` to install app dependencies
 
 1. Run `npm start` to compile the TypeScript and start the server

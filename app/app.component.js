@@ -38,7 +38,7 @@ System.register(['angular2/core', 'angular2/router', './app.providers', './custo
                         providers: [app_providers_1.APP_PROVIDERS]
                     }),
                     router_1.RouteConfig([
-                        { path: '/', as: 'Customers', component: customers_component_1.CustomersComponent, useAsDefault: true }
+                        { path: '/', name: 'Customers', component: customers_component_1.CustomersComponent, useAsDefault: true }
                     ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

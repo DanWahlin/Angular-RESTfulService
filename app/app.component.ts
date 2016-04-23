@@ -11,7 +11,7 @@ import { CustomersComponent } from './customers/customers.component';
   providers: [ APP_PROVIDERS ]
 })
 @RouteConfig([
-  { path: '/', as: 'Customers', component: CustomersComponent, useAsDefault: true }
+  { path: '/', name: 'Customers', component: CustomersComponent, useAsDefault: true }
 ])
 export class AppComponent {
   
