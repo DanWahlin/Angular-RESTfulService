@@ -12,6 +12,12 @@
     "typings": "typings"
   },
   "dependencies": {
+    "angular2": "2.0.0-beta.16",
+    "systemjs": "0.19.26",
+    "es6-shim": "^0.35.0",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "zone.js": "0.6.12",
     "express": "4.13.4",
     "jade": ">=1.11.0",
     "mongoose": ">=4.4.12",
@@ -20,13 +26,7 @@
     "express-session": "^1.13.0",
     "errorhandler": "^1.4.3",
     "csurf": "^1.8.3",
-    "nodemon": "^1.9.1",
-    "angular2": "2.0.0-beta.15",
-    "systemjs": "0.19.25",
-    "es6-shim": "^0.35.0",
-    "reflect-metadata": "0.1.2",
-    "rxjs": "5.0.0-beta.2",
-    "zone.js": "0.6.10"
+    "nodemon": "^1.9.1"
   },
   "devDependencies": {
     "concurrently": "^2.0.0",
