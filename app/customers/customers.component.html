@@ -18,14 +18,14 @@
 </div>
 
 <ul [hidden]="editViewEnabled">
-    <li *ngFor="#customer of customers">
+    <li *ngFor="let customer of customers">
         {{ customer.firstName  }} {{ customer.lastName }}
     </li>
 </ul>
 
 <!-- Added editable list to demonstrate doing an HTTP PUT -->
 <div [hidden]="!editViewEnabled">
-    <div class="container" *ngFor="#customer of customers">
+    <div class="container" *ngFor="let customer of customers">
         <div class="row" [hidden]="editId===customer.id">
             <div class="col-md-4">
             {{ customer.firstName  }} {{ customer.lastName }}
