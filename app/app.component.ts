@@ -5,6 +5,7 @@ import { APP_PROVIDERS } from './app.providers';
 import { CustomersComponent } from './customers/customers.component';
 
 @Component({ 
+  moduleId: __moduleName,
   selector: 'app-container',
   template: `<router-outlet></router-outlet>`,
   directives: [ROUTER_DIRECTIVES],

@@ -12,10 +12,10 @@ export class DataService {
     
     private _url: string = 'api/dataservice/';
     
-    constructor(private _http: Http) { }
+    constructor(private http: Http) { }
     
     getCustomersSummary() : Observable<ICustomer[]> {
-        return this._http.get(this._url + 'customers')
+        return this.http.get(this._url + 'customers')
                    .map((resp: Response) => resp.json())
                    .catch(this.handleError);
     }
@@ -25,11 +25,10 @@ export class DataService {
       let headers = new Headers({ 'content-type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
         
-      return this._http.put(this._url + 'putCustomer/' + customer.id, 
-                            JSON.stringify(customer), options)
-                 .map((response: Response) => {
-                   return response.json();
-                 });
+      return this.http.put(this._url + 'putCustomer/' + customer.id, 
+                           JSON.stringify(customer), options)
+                 .map((response: Response) => response.json())
+                 .catch(this.handleError);
     }
     
     handleError(error: any) {
