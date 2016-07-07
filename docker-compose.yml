@@ -12,8 +12,11 @@ services:
     build:
       context: .
       dockerfile: .docker/node.development.dockerfile
+      #args:
+      #  http_proxy: http://172.17.100.20:8080
+      #  https_proxy: http://172.17.100.20:8080
     volumes:
-      - .:/var/www/angular2restfulservice
+      - .:/c/pr/github/Angular2-RESTfulService
     environment:
       - NODE_ENV=development
     ports:
