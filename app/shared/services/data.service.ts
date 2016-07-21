@@ -22,11 +22,11 @@ export class DataService {
     
     updateCustomer(customer: ICustomer) {
       //Set proper info for header
-      let headers = new Headers({ 'content-type': 'application/json' });
-      let options = new RequestOptions({ headers: headers });
+      //let headers = new Headers({ 'content-type': 'application/json' });
+      //let options = new RequestOptions({ headers: headers });
         
       return this.http.put(this._url + 'putCustomer/' + customer.id, 
-                           JSON.stringify(customer), options)
+                           customer)
                  .map((response: Response) => response.json())
                  .catch(this.handleError);
     }

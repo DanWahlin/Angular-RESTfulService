@@ -41,6 +41,12 @@ exports.addCustomer = function (req, res) {
 
 exports.editCustomer = function (req, res) {
     console.log('*** editCustomer');
+    console.log('*** req.body');
+    console.log(req.body);
+
+    if (!req.body || !req.body.stateId) {
+        throw new Error('Customer and associated stateId required');
+    }
 
     db.getState(req.body.stateId, function (err, state) {
         if (err) {

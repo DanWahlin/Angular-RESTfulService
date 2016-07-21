@@ -5,7 +5,7 @@ import { DataService } from '../shared/services/data.service';
 import { ICustomer } from '../shared/interfaces';
 
 @Component({
-    moduleId: __moduleName,
+    moduleId: module.id,
     selector: 'customers',
     templateUrl: 'customers.component.html'
 })
@@ -25,8 +25,11 @@ export class CustomersComponent implements OnInit {
     save(customer: ICustomer) {
         this._dataService.updateCustomer(customer)
             .subscribe((status: boolean) => {
-                if (status) this.editId = 0;
-                else this.errorMessage = 'Unable to save customer';
+                if (status) {
+                    this.editId = 0;
+                } else {
+                    this.errorMessage = 'Unable to save customer';
+                }
             })
     }
 

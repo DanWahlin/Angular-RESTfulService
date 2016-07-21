@@ -19,6 +19,8 @@ services:
     networks:
       - nodeapp-network
       
+  #No authentication is provided here - just a demo! Read the Dockerfile
+  #for more information about adding authentication.
   mongodb:
     container_name: mongodb
     image: mongo
