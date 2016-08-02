@@ -41,7 +41,7 @@ Load data into MongoDB by performing the following steps:
 
 ## Running the Application with Docker
 
-1. Run `npm run tsc:w` in a command window to compile TypeScript to JavaScript locally (leave the window running). This is only needed when in "dev" mode.
+1. Run `npm run build:w` in a command window to compile TypeScript to JavaScript locally (leave the window running). This is only needed when in "dev" mode.
 
 1. Install Docker Toolbox (http://docker.com/toolbox)
 
