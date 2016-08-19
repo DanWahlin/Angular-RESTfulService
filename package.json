@@ -8,47 +8,43 @@
   },
   "scripts": {
     "postinstall": "npm run typings install",
-    "build": "tsc",
-    "build:w": "tsc --watch",
-    "bundle": "node bundle.js",
-    "bundle:prod": "node bundle.js --prod",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
     "server": "node server.js",
-    "start": "concurrently \"npm run build:w\" \"supervisor -i app server.js\"",
+    "start": "concurrently \"npm run tsc:w\" \"supervisor -i app server.js\"",
     "typings": "typings"
   },
   "license": "ISC",
   "dependencies": {
-    "@angular/common": "2.0.0-rc.4",
-    "@angular/compiler": "2.0.0-rc.4",
-    "@angular/core": "2.0.0-rc.4",
-    "@angular/forms": "0.2.0",
-    "@angular/http": "2.0.0-rc.4",
-    "@angular/platform-browser": "2.0.0-rc.4",
-    "@angular/platform-browser-dynamic": "2.0.0-rc.4",
-    "@angular/router": "3.0.0-beta.2",
-    
-    "systemjs": "0.19.31",
+    "@angular/common": "2.0.0-rc.5",
+    "@angular/compiler": "2.0.0-rc.5",
+    "@angular/core": "2.0.0-rc.5",
+    "@angular/forms": "0.3.0",
+    "@angular/http": "2.0.0-rc.5",
+    "@angular/platform-browser": "2.0.0-rc.5",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.5",
+    "@angular/router": "3.0.0-rc.1",
+
+    "systemjs": "0.19.27",
     "core-js": "^2.4.0",
     "reflect-metadata": "^0.1.3",
     "rxjs": "5.0.0-beta.6",
     "zone.js": "^0.6.12",
 
-    "express": "4.13.4",
-    "jade": ">=1.11.0",
-    "mongoose": ">=4.4.12",
-    "cookie-parser": "^1.4.1",
-    "body-parser": "^1.15.0",
-    "express-session": "^1.13.0",
+    "express": "^4.14.0",
+    "pug": "^2.0.0-beta5",
+    "mongoose": "^4.5.9",
+    "cookie-parser": "^1.4.3",
+    "body-parser": "^1.15.2",
+    "express-session": "^1.14.0",
     "errorhandler": "^1.4.3",
-    "csurf": "^1.8.3",
-    "nodemon": "^1.9.1"
+    "csurf": "^1.9.0"
   },
   "devDependencies": {
-    "concurrently": "^2.0.0",
-    "lite-server": "^2.2.0",
+    "concurrently": "^2.2.0",
     "typescript": "1.8.10",
-    "typings": "^1.0.4",
-    "systemjs-builder": "^0.15.23",
-    "yargs": "^4.7.1"
+    "typings": "^1.3.2",
+    "systemjs-builder": "^0.15.26",
+    "yargs": "^5.0.0"
   }
 }

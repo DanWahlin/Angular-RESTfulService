@@ -10,23 +10,18 @@ import { ICustomer } from '../interfaces';
 @Injectable()
 export class DataService {
     
-    private _url: string = 'api/dataservice/';
+    private url: string = 'api/dataservice/';
     
     constructor(private http: Http) { }
     
     getCustomersSummary() : Observable<ICustomer[]> {
-        return this.http.get(this._url + 'customers')
+        return this.http.get(this.url + 'customers')
                    .map((resp: Response) => resp.json())
                    .catch(this.handleError);
     }
     
-    updateCustomer(customer: ICustomer) {
-      //Set proper info for header
-      //let headers = new Headers({ 'content-type': 'application/json' });
-      //let options = new RequestOptions({ headers: headers });
-        
-      return this.http.put(this._url + 'putCustomer/' + customer.id, 
-                           customer)
+    updateCustomer(customer: ICustomer) {       
+      return this.http.put(this.url + 'putCustomer/' + customer.id, customer)
                  .map((response: Response) => response.json())
                  .catch(this.handleError);
     }

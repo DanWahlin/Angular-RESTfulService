@@ -11,7 +11,7 @@ var express = require('express'),
     app = express();
 
 app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 app.use(session({ 
     secret: 'customermanagerdemo', 
     saveUninitialized: true,

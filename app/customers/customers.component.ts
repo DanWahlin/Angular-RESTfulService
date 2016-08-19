@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
 
 import { DataService } from '../shared/services/data.service';
 import { ICustomer } from '../shared/interfaces';
@@ -15,15 +14,15 @@ export class CustomersComponent implements OnInit {
     editId: number = 0;
     errorMessage: string;
 
-    constructor(private _dataService: DataService) {  }
+    constructor(private dataService: DataService) {  }
 
     ngOnInit() { 
-        this._dataService.getCustomersSummary()
+        this.dataService.getCustomersSummary()
             .subscribe((data: ICustomer[]) => this.customers = data);
     }
     
     save(customer: ICustomer) {
-        this._dataService.updateCustomer(customer)
+        this.dataService.updateCustomer(customer)
             .subscribe((status: boolean) => {
                 if (status) {
                     this.editId = 0;

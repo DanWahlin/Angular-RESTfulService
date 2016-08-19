@@ -1,12 +1,10 @@
-import { provideRouter, RouterConfig } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { CustomersComponent }     from './customers/customers.component';
 
-const APP_ROUTES: RouterConfig = [
+const app_routes: Routes = [
   { path: '',  pathMatch:'full', redirectTo: '/customers' },
   { path: 'customers', component: CustomersComponent }
 ];
 
-export const APP_ROUTER_PROVIDERS = [
-  provideRouter(APP_ROUTES)
-];
+export const app_routing = RouterModule.forRoot(app_routes);
