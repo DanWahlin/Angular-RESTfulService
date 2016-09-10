@@ -37,7 +37,6 @@ process.on('uncaughtException', function (err) {
 
 DB.startup(function() {
     if (process.env.NODE_ENV === 'development') {
-        console.log('Starting dbSeeder...');
         seeder.init();
     } 
 });
