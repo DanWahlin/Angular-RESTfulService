@@ -47,7 +47,9 @@ Load data into MongoDB by performing the following steps:
 
 1. Open a command prompt window
 
-1. Run `npm run tsc:w` in a command window to compile TypeScript to JavaScript locally (leave the window running). This is only needed when in "dev" mode.
+1. Run `npm install`
+
+1. Run `npm run tsc:w` to compile TypeScript to JavaScript locally (leave the window running). This is only needed when in "dev" mode.
 
 1. Open another command window and navigate to this application's root folder in the command window
 
