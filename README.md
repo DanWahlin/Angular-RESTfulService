@@ -25,7 +25,6 @@ Load data into MongoDB by performing the following steps:
 * Install MongoDB (https://docs.mongodb.org/manual/installation) on your machine
 * Execute 'mongod' to start the MongoDB daemon if it's not already running
 * Open a command window and navigate to the `angular2-restfulservice` directory 
-* Run `node lib/dbSeeder.js` to insert the sample data (exit with ctrl + c)
 
 ### Running the Application Locally
 
