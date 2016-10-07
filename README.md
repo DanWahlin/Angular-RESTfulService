@@ -18,17 +18,11 @@ to call into a RESTful service. Simply clone the project or download and extract
 * Node.js 4.0.0 or higher
 * MongoDB 3.2 or higher
 
-### Loading MongoDB Data
-
-Load data into MongoDB by performing the following steps:
-
-* Install MongoDB (https://docs.mongodb.org/manual/installation) on your machine
-* Execute 'mongod' to start the MongoDB daemon if it's not already running
-* Open a command window and navigate to the `angular2-restfulservice` directory 
-
 ### Running the Application Locally
 
 1. Install Node.js and MongoDB on your dev box
+
+1. Execute 'mongod' to start the MongoDB daemon if it's not already running
 
 1. Open `config/config.development.json` and change the host from `mongodb` to `localhost`
 
@@ -60,5 +54,3 @@ Load data into MongoDB by performing the following steps:
 
 1. Live long and prosper
 
-Note: To run the "production" build follow the instructions in docker-compose.production.yml. The local files are copied into
-the image with this mode so no need to have the tsc:w task running unless you're going to continue local development.
