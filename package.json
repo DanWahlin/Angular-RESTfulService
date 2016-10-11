@@ -11,7 +11,7 @@
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "server": "node server.js",
-    "start": "concurrently \"npm run tsc:w\" \"supervisor -i app server.js\"",
+    "start": "concurrently \"npm run tsc:w\" \"nodemon server.js\"",
     "typings": "typings"
   },
   "license": "ISC",

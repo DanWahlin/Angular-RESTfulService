@@ -24,9 +24,9 @@ to call into a RESTful service. Simply clone the project or download and extract
 
 1. Execute 'mongod' to start the MongoDB daemon if it's not already running
 
-1. Open `config/config.development.json` and change the host from `mongodb` to `localhost`
+1. Install Nodemon: `npm install nodemon -g`
 
-1. Install supervisor: `npm install supervisor -g`
+1. Open `config/config.development.json` and change the host from `mongodb` to `localhost`
 
 1. Run `npm install` to install app dependencies
 
