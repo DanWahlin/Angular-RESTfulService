@@ -1,49 +1,47 @@
 {
-  "name": "restfulservice",
-  "author": "Dan Wahlin",
-  "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/danwahlin/Angular2-RestfulService"
-  },
-  "scripts": {
-    "postinstall": "npm run typings install",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "server": "node server.js",
-    "start": "concurrently \"npm run tsc:w\" \"nodemon server.js\"",
-    "typings": "typings"
-  },
-  "license": "ISC",
-  "dependencies": {
-    "@angular/common": "2.0.2",
-    "@angular/compiler": "2.0.2",
-    "@angular/core": "2.0.2",
-    "@angular/forms": "2.0.2",
-    "@angular/http": "2.0.2",
-    "@angular/platform-browser": "2.0.2",
-    "@angular/platform-browser-dynamic": "2.0.2",
-    "@angular/router": "3.0.2",
-
-    "systemjs": "0.19.39",
-    "core-js": "^2.4.1",
-    "reflect-metadata": "^0.1.8",
-    "rxjs": "5.0.0-beta.12",
-    "zone.js": "^0.6.25",
-
-    "express": "^4.14.0",
-    "pug": "^2.0.0-beta6",
-    "mongoose": "^4.6.0",
-    "cookie-parser": "^1.4.3",
-    "body-parser": "^1.15.2",
-    "express-session": "^1.14.1",
-    "errorhandler": "^1.4.3",
-    "csurf": "^1.9.0"
-  },
-  "devDependencies": {
-    "concurrently": "^3.1.0",
-    "lite-server": "^2.2.2",
-    "typescript": "2.0.3",
-    "typings": "^1.4.0"
-  }
+    "name": "restfulservice",
+    "author": "Dan Wahlin",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/danwahlin/Angular2-RestfulService"
+    },
+    "scripts": {
+        "postinstall": "npm run typings install",
+        "tsc": "tsc",
+        "tsc:w": "tsc -w",
+        "server": "node server.js",
+        "start": "concurrently \"npm run tsc:w\" \"nodemon server.js\"",
+        "typings": "typings"
+    },
+    "license": "ISC",
+    "dependencies": {
+        "@angular/common": "2.1.0",
+        "@angular/compiler": "2.1.0",
+        "@angular/core": "2.1.0",
+        "@angular/forms": "2.1.0",
+        "@angular/http": "2.1.0",
+        "@angular/platform-browser": "2.1.0",
+        "@angular/platform-browser-dynamic": "2.1.0",
+        "@angular/router": "3.1.0",
+        "systemjs": "0.19.39",
+        "core-js": "^2.4.1",
+        "reflect-metadata": "^0.1.8",
+        "rxjs": "5.0.0-beta.12",
+        "zone.js": "^0.6.25",
+        "express": "^4.14.0",
+        "pug": "^2.0.0-beta6",
+        "mongoose": "^4.6.0",
+        "cookie-parser": "^1.4.3",
+        "body-parser": "^1.15.2",
+        "express-session": "^1.14.1",
+        "errorhandler": "^1.4.3",
+        "csurf": "^1.9.0"
+    },
+    "devDependencies": {
+        "concurrently": "^3.1.0",
+        "lite-server": "^2.2.2",
+        "typescript": "2.0.3",
+        "typings": "^1.4.0"
+    }
 }
