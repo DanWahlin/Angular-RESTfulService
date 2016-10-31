@@ -7,28 +7,26 @@
         "url": "https://github.com/danwahlin/Angular2-RestfulService"
     },
     "scripts": {
-        "postinstall": "npm run typings install",
         "tsc": "tsc",
         "tsc:w": "tsc -w",
         "server": "node server.js",
-        "start": "concurrently \"npm run tsc:w\" \"nodemon server.js\"",
-        "typings": "typings"
+        "start": "concurrently \"npm run tsc:w\" \"nodemon server.js\""
     },
     "license": "ISC",
     "dependencies": {
-        "@angular/common": "2.1.0",
-        "@angular/compiler": "2.1.0",
-        "@angular/core": "2.1.0",
-        "@angular/forms": "2.1.0",
-        "@angular/http": "2.1.0",
-        "@angular/platform-browser": "2.1.0",
-        "@angular/platform-browser-dynamic": "2.1.0",
-        "@angular/router": "3.1.0",
-        "systemjs": "0.19.39",
+        "@angular/common": "2.1.2",
+        "@angular/compiler": "2.1.2",
+        "@angular/core": "2.1.2",
+        "@angular/forms": "2.1.2",
+        "@angular/http": "2.1.2",
+        "@angular/platform-browser": "2.1.2",
+        "@angular/platform-browser-dynamic": "2.1.2",
+        "@angular/router": "3.1.2",
+        "systemjs": "0.19.40",
         "core-js": "^2.4.1",
         "reflect-metadata": "^0.1.8",
         "rxjs": "5.0.0-beta.12",
-        "zone.js": "^0.6.25",
+        "zone.js": "^0.6.26",
         "express": "^4.14.0",
         "pug": "^2.0.0-beta6",
         "mongoose": "^4.6.0",
@@ -42,6 +40,7 @@
         "concurrently": "^3.1.0",
         "lite-server": "^2.2.2",
         "typescript": "2.0.3",
-        "typings": "^1.4.0"
+        "@types/core-js": "^0.9.34",
+        "@types/node": "^6.0.46"
     }
 }
