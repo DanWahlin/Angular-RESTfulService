@@ -1,5 +1,9 @@
 # Angular RESTful Service Example
 
+----------
+This code currently being monkeyed-around-with. All guarantees are suspect and void.
+----------
+
 This project provides a simple look at getting started using Angular 2+
 to call into a RESTful service. Simply clone the project or download and extract the .zip to get started. 
 
