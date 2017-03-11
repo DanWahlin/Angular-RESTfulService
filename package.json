@@ -14,19 +14,19 @@
     },
     "license": "ISC",
     "dependencies": {
-        "@angular/common": "2.4.8",
-        "@angular/compiler": "2.4.8",
-        "@angular/core": "2.4.8",
-        "@angular/forms": "2.4.8",
-        "@angular/http": "2.4.8",
-        "@angular/platform-browser": "2.4.8",
-        "@angular/platform-browser-dynamic": "2.4.8",
-        "@angular/router": "3.4.8",
-        "@angular/upgrade": "2.4.8",
+        "@angular/common": "2.4.9",
+        "@angular/compiler": "2.4.9",
+        "@angular/core": "2.4.9",
+        "@angular/forms": "2.4.9",
+        "@angular/http": "2.4.9",
+        "@angular/platform-browser": "2.4.9",
+        "@angular/platform-browser-dynamic": "2.4.9",
+        "@angular/router": "3.4.9",
+        "@angular/upgrade": "2.4.9",
         "systemjs": "0.20.9",
-        "core-js": "^2.4.1",
+        "core-js": "2.4.1",
         "rxjs": "5.2.0",
-        "zone.js": "^0.7.7",
+        "zone.js": "0.7.4",
         "express": "^4.14.1",
         "pug": "^2.0.0-beta11",
         "mongoose": "^4.8.3",
@@ -37,10 +37,10 @@
         "csurf": "^1.9.0"
     },
     "devDependencies": {
-        "concurrently": "^3.3.0",
-        "lite-server": "^2.2.2",
+        "concurrently": "3.4.0",
+        "lite-server": "2.3.0",
         "typescript": "2.2.1",
-        "@types/core-js": "^0.9.35",
-        "@types/node": "^7.0.5"
+        "@types/core-js": "0.9.35",
+        "@types/node": "7.0.5"
     }
 }
