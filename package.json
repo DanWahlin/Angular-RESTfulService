@@ -29,9 +29,9 @@
         "zone.js": "0.7.4",
         "express": "^4.14.1",
         "pug": "^2.0.0-beta11",
-        "mongoose": "^4.8.3",
+        "mongoose": "^4.8.6",
         "cookie-parser": "^1.4.3",
-        "body-parser": "^1.16.1",
+        "body-parser": "^1.17.1",
         "express-session": "^1.15.1",
         "errorhandler": "^1.5.0",
         "csurf": "^1.9.0"
@@ -40,7 +40,6 @@
         "concurrently": "3.4.0",
         "lite-server": "2.3.0",
         "typescript": "2.2.1",
-        "@types/core-js": "0.9.35",
         "@types/node": "7.0.5"
     }
 }
