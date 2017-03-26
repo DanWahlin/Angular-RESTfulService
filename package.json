@@ -1,32 +1,38 @@
 {
-    "name": "restfulservice",
+    "name": "angular-node-restfulservice",
     "author": "Dan Wahlin",
     "version": "1.0.0",
     "repository": {
         "type": "git",
-        "url": "https://github.com/danwahlin/Angular2-RestfulService"
+        "url": "https://github.com/danwahlin/Angular-RestfulService"
     },
     "scripts": {
         "tsc": "tsc",
         "tsc:w": "tsc -w",
         "server": "node server.js",
-        "start": "concurrently \"npm run tsc:w\" \"nodemon server.js\""
+        "start": "tsc && concurrently \"tsc -w\" \"nodemon server.js\""
     },
     "license": "ISC",
     "dependencies": {
-        "@angular/common": "2.4.9",
-        "@angular/compiler": "2.4.9",
-        "@angular/core": "2.4.9",
-        "@angular/forms": "2.4.9",
-        "@angular/http": "2.4.9",
-        "@angular/platform-browser": "2.4.9",
-        "@angular/platform-browser-dynamic": "2.4.9",
-        "@angular/router": "3.4.9",
-        "@angular/upgrade": "2.4.9",
-        "systemjs": "0.20.9",
+        "@angular/common": "4.0.0",
+        "@angular/compiler": "4.0.0",
+        "@angular/core": "4.0.0",
+        "@angular/forms": "4.0.0",
+        "@angular/http": "4.0.0",
+        "@angular/platform-browser": "4.0.0",
+        "@angular/platform-browser-dynamic": "4.0.0",
+        "@angular/router": "4.0.0",
+        "@angular/upgrade": "4.0.0",
+        "@angular/compiler-cli": "4.0.0",
+        "@angular/platform-server": "4.0.0",
+        "@angular/tsc-wrapped": "4.0.0",
+        "@angular/animations": "4.0.0",
+
+        "systemjs": "0.19.47",
         "core-js": "2.4.1",
         "rxjs": "5.2.0",
-        "zone.js": "0.7.4",
+        "zone.js": "0.8.5",
+        
         "express": "^4.14.1",
         "pug": "^2.0.0-beta11",
         "mongoose": "^4.8.6",
@@ -40,6 +46,6 @@
         "concurrently": "3.4.0",
         "lite-server": "2.3.0",
         "typescript": "2.2.1",
-        "@types/node": "7.0.5"
+        "@types/node": "7.0.11"
     }
 }
