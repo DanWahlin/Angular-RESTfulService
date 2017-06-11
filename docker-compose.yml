@@ -13,7 +13,7 @@ services:
       context: .
       dockerfile: .docker/node.development.dockerfile
     volumes:
-      - .:/var/www/angular2restfulservice
+      - .:/var/www/angularrestfulservice
     environment:
       - NODE_ENV=development
     ports:
