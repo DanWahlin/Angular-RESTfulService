@@ -1,6 +1,6 @@
 # Angular RESTful Service Example
 
-This project provides a simple look at getting started using Angular 2+
+This project provides a simple look at getting started using Angular 
 to call into a RESTful service. Simply clone the project or download and extract the .zip to get started. 
 
 ## Angular Concepts Covered
