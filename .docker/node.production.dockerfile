@@ -8,6 +8,7 @@ COPY      . $CONTAINER_PATH
 WORKDIR   $CONTAINER_PATH
 
 RUN npm install nodemon -g
+RUN npm install express --save
 
 EXPOSE 3000
 
