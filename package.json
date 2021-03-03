@@ -32,7 +32,7 @@
         "rxjs": "5.4.3",
         "zone.js": "0.8.17",
         "express": "^4.15.4",
-        "pug": "^2.0.0-rc.3",
+        "pug": "^3.0.1",
         "mongoose": "^5.7.5",
         "cookie-parser": "^1.4.3",
         "body-parser": "^1.17.2",
