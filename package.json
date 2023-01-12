@@ -35,8 +35,8 @@
         "pug": "^3.0.1",
         "mongoose": "^5.7.5",
         "cookie-parser": "^1.4.3",
-        "body-parser": "^1.17.2",
-        "express-session": "^1.15.5",
+        "body-parser": "^1.20.1",
+        "express-session": "^1.17.3",
         "errorhandler": "^1.5.0",
         "csurf": "^1.9.0"
     },
