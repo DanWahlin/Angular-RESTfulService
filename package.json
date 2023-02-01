@@ -33,7 +33,7 @@
         "zone.js": "0.8.17",
         "express": "^4.17.3",
         "pug": "^3.0.1",
-        "mongoose": "^5.7.5",
+        "mongoose": "^5.13.15",
         "cookie-parser": "^1.4.3",
         "body-parser": "^1.17.2",
         "express-session": "^1.15.5",
